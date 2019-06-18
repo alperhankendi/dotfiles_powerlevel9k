@@ -47,12 +47,6 @@ The bottom right is running `vtop`
 
 To launch fullscreen, hit `Command + Enter` in iTerm, then use `Command + d` and `Command + D` to create split panes.
 
-
-\\[._.]/ - I'm so excited I just binaried in my pants!
-
-# Watch me run!
-![Running](http://media.giphy.com/)
-
 # Installation
 
 > Note: I recommend forking this repo in case you don't like anything I do and want to set your own preferences (and pull request them!)
