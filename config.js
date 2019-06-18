@@ -15,6 +15,8 @@ module.exports = {
     'autojump',
     //https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
     'zsh-autosuggestions',
+    //https://www.alfredapp.com/
+    'alfred',
   ],
   cask: [
     'docker', // docker for mac
