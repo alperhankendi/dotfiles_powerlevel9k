@@ -17,6 +17,7 @@ module.exports = {
     'zsh-autosuggestions',
     //https://www.alfredapp.com/
     'alfred',
+    'sourcetree',
   ],
   cask: [
     'docker', // docker for mac
