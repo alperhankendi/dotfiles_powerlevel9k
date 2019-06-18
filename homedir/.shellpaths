@@ -1,0 +1,10 @@
+#My Scripts
+export PATH=$PATH:.
+#export PATH=$PATH:~/.dotfiles/scripts
+
+#Brew
+export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+
+# The next line enables shell command completion for gcloud.
+#source "/Users/$(whoami)/Downloads/google-cloud-sdk/completion.zsh.inc"
