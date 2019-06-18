@@ -115,3 +115,5 @@ source $(brew --prefix nvm)/nvm.sh
 #export PROMPT="$PROMPT\$(git-radar --zsh --fetch) "
 
 source $ZSH/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

@@ -216,7 +216,7 @@ fi
 read -r -p "wanna install zsh-autosuggestion? [y|N]" response
 if [[ $response =~ (y|yes|Y) ]];then
   bot "installing auto suggestion"
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.dotfiles/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
 
 read -r -p "Install fonts? [y|N] " response
