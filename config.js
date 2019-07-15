@@ -16,7 +16,10 @@ module.exports = {
     //https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
     'zsh-autosuggestions',
     //https://github.com/jesseduffield/lazydocker
-    'lazydocker' 
+    'lazydocker',
+    //https://www.alfredapp.com/
+    'alfred',
+    'sourcetree'
   ],
   cask: [
     'docker', // docker for mac

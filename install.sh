@@ -218,6 +218,16 @@ read -r -p "wanna install zsh-autosuggestion? [y|N]" response
 if [[ $response =~ (y|yes|Y) ]];then
   bot "installing auto suggestion"
   git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+  ok
+fi
+
+read -r -p "Do you want to install dotnet core sdk ? [y|N]" response
+if [[ $response =~ (y|yes|Y) ]];then
+  bot "Dotnet core downloading..."
+  brew cask install dotnet-sdk
+  
+  ok
 fi
 
 read -r -p "Install fonts? [y|N] " response
