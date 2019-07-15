@@ -98,3 +98,7 @@ alias ksys='kubectl --namespace=kube-system'
 alias ka='kubectl apply --recursive -f'
 alias krm='kubectl delete'
 alias kgsvc='kubectl get service'
+
+
+#lazy docker
+alias lzd='lazydocker'

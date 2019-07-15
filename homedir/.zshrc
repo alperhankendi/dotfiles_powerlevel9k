@@ -24,7 +24,7 @@ POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND="gray"
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_FOREGROUND="yellow"
 
 zsh_wifi_signal(){
-        local output=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I) 
+        local output=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I)
         local airport=$(echo $output | grep 'AirPort' | awk -F': ' '{print $2}')
 
         if [ "$airport" = "Off" ]; then
@@ -38,7 +38,7 @@ zsh_wifi_signal(){
                 [[ $speed -gt 100 ]] && color='%F{green}'
                 [[ $speed -lt 50 ]] && color='%F{red}'
 
-                echo -n "%{$color%} $speed Mb/s%{%f%}" # removed char not in my PowerLine font 
+                echo -n "%{$color%} $speed Mb/s%{%f%}" # removed char not in my PowerLine font
         fi
 }
 POWERLEVEL9K_CUSTOM_DOTNET="zsh_dotnet"
@@ -78,13 +78,13 @@ export DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   zsh-autosuggestions
-  colorize 
-  compleat 
-  dirpersist 
-  autojump 
-  git 
-  gulp 
-  history 
+  colorize
+  compleat
+  dirpersist
+  autojump
+  git
+  gulp
+  history
   docker
   kubectl
   cp)

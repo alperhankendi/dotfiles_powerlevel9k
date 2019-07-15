@@ -159,6 +159,7 @@ require_brew git
 # update zsh to latest
 require_brew zsh
 
+
 # set zsh as the user login shell
 CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
 if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
@@ -269,6 +270,9 @@ running "cleanup homebrew"
 brew cleanup --force > /dev/null 2>&1
 rm -f -r /Library/Caches/Homebrew/* > /dev/null 2>&1
 ok
+
+brew tap jesseduffield/lazydocker
+
 
 bot "OS Configuration"
 read -r -p "Do you want to update the system configurations? [y|N] " response
