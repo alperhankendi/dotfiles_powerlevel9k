@@ -102,3 +102,8 @@ alias kgsvc='kubectl get service'
 
 #lazy docker
 alias lzd='lazydocker'
+
+#network stuff
+netstat -ant | grep :8000 | awk '{print $6}' | sort | uniq -c | sort -n
+
+netstat -na | grep ":5000" |wc -l
