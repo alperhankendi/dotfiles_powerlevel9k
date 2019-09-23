@@ -19,7 +19,11 @@ module.exports = {
     'lazydocker',
     //https://www.alfredapp.com/
     'alfred',
-    'sourcetree'
+    'sourcetree',
+    //https://github.com/npryce/adr-tools
+    'adr-tools',
+    //https://github.com/derailed/k9s
+    'derailed/k9s/k9s'
   ],
   cask: [
     'docker', // docker for mac
