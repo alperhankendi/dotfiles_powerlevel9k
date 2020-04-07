@@ -1,9 +1,9 @@
-# Path to your oh-my-zsh configuration.
+#Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
 
 #export POWERLEVEL9K_MODE='nerdfont-complete'
-export ZSH_THEME="powerlevel9k/powerlevel9k"
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # export ZSH_THEME="agnoster"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
@@ -15,8 +15,8 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon  context dir vcs go_version node_version kubecontext)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_dotnet battery custom_wifi_signal root_indicator background_jobs history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs go_version)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_dotnet root_indicator background_jobs history)
 POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(red1 orangered1 darkorange orange1 gold1 yellow1 yellow2 greenyellow chartreuse1 chartreuse2 green1)
 
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
@@ -114,6 +114,47 @@ source $(brew --prefix nvm)/nvm.sh
 
 #export PROMPT="$PROMPT\$(git-radar --zsh --fetch) "
 
-source $ZSH/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+#source $ZSH/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 
-source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source $HOME/.iterm2_shell_integration.zsh
+
+
+function iterm2_print_user_vars() {
+  iterm2_set_user_var k8sContext $(kubectl config current-context)
+}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ahankendi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ahankendi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ahankendi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ahankendi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+source $ZSH/themes/powerlevel10k/powerlevel10k.zsh-theme
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-bin-gem-node
+
+### End of Zinit's installer chunk
+zplugin light jonmosco/kube-ps1
+PROMPT='$(kube_ps1)'$PROMPT
