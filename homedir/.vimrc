@@ -27,8 +27,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'Valloric/YouCompleteMe'
 " Navigation (IDE frame)
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
@@ -240,8 +240,8 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " map <up> <ESC>:bp<RETURN> " left arrow (normal mode) switches buffers
 " map <down> <ESC>:bn<RETURN> " right arrow (normal mode) switches buffers
-" map <right> <ESC>:Tlist<RETURN> " show taglist
-" map <left> <ESC>:NERDTreeToggle<RETURN>  " moves left fa split
+"map <right> <ESC>:Tlist<RETURN> " show taglist
+"map <left> <ESC>:NERDTreeToggle<RETURN>  " moves left fa split
 " map <F2> <ESC>ggVG:call SuperRetab()<left>
 " map <F12> ggVGg? " apply rot13 for people snooping over shoulder, good fun
 
@@ -289,17 +289,17 @@ vnoremap <silent> <leader>es :EsformatterVisual<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let NERDTreeShowHidden=1
-"let NERDTreeIgnore=['\.DS_Store$']
-"" auto open if no file sent as arg
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"" Toggle NERDtree with C-n
-"map ,n <plug>NERDTreeTabsToggle<CR>
-"" Autoclose if only NERDtree is left
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.DS_Store$']
+" auto open if no file sent as arg
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Toggle NERDtree with C-n
+map ,n <plug>NERDTreeTabsToggle<CR>
+" Autoclose if only NERDtree is left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw (default installed alt for NERDTree)
 " more info: https://shapeshed.com/vim-netrw/
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
