@@ -168,6 +168,10 @@ if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
   # chsh -s /usr/local/bin/zsh
   sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
   ok
+
+  bot "instaling zsh z-pluing..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+
 fi
 
 if [[ ! -d "./oh-my-zsh/custom/themes/powerlevel9k" ]]; then
@@ -226,7 +230,21 @@ read -r -p "Do you want to install dotnet core sdk ? [y|N]" response
 if [[ $response =~ (y|yes|Y) ]];then
   bot "Dotnet core downloading..."
   brew cask install dotnet-sdk
-  
+
+  ok
+fi
+
+
+read -r -p "Do you want to install kube command line tools or helper ? [y|N]" response
+if [[ $response =~ (y|yes|Y) ]];then
+  bot "installing krew for kubectl..."
+  kubectl krew install ctx
+  brew install ns
+  bot "installing ns plugin"
+  brew install kube-ps1
+  bot "installing kube-ps1 plugin..."
+
+
   ok
 fi
 
@@ -290,7 +308,7 @@ if [[ -z $response || $response =~ ^(n|N) ]]; then
   open /Applications/iTerm.app
   bot "All done"
   exit
-fi 
+fi
 
 ###############################################################################
 bot "Configuring General System UI/UX..."

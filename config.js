@@ -18,21 +18,20 @@ module.exports = {
     //https://github.com/jesseduffield/lazydocker
     'lazydocker',
     //https://www.alfredapp.com/
-    'alfred',
     'sourcetree',
     //https://github.com/npryce/adr-tools
     'adr-tools',
     //https://github.com/derailed/k9s
     'derailed/k9s/k9s',
     'kubectx',
-
-    'yarn'
+    'kube-ps1'
+    'yarn',
+    'k9s'
   ],
   cask: [
     'docker', // docker for mac
     'evernote',
     'iterm2',
-    'slack',
     'visual-studio-code',
   ],
   gem: [
