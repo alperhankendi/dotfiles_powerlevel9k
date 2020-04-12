@@ -107,3 +107,7 @@ alias lzd='lazydocker'
 netstat -ant | grep :8000 | awk '{print $6}' | sort | uniq -c | sort -n
 
 netstat -na | grep ":5000" |wc -l
+
+
+# development stuff
+alias dummy-server='npx http-server -p $1'
