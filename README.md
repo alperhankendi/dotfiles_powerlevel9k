@@ -5,10 +5,8 @@ You don't need to install or configure anything upfront! This works with a brand
 
 
 - [Forget About Manual Configuration!](#forget-about-manual-configuration)
-- [Watch me run!](#watch-me-run)
 - [Installation](#installation)
   - [Restoring Dotfiles](#restoring-dotfiles)
-- [Additional](#additional)
   - [Crontab](#crontab)
 - [Settings](#settings)
   - [General System Changes](#general-system-changes)
@@ -28,6 +26,7 @@ You don't need to install or configure anything upfront! This works with a brand
   - [Mac App Store](#mac-app-store)
   - [Messages](#messages)
   - [SizeUp.app](#sizeupapp)
+  - [SubModule](#submodule)
 
 # Forget About Manual Configuration!
 
@@ -249,6 +248,7 @@ Here is the current list:
 
 
 ## SubModule
+```bash
 [submodule "oh-my-zsh"]
 path = oh-my-zsh
 url = git://github.com/robbyrussell/oh-my-zsh.git
@@ -258,3 +258,4 @@ url = git://github.com/sjl/z-zsh.git
 [submodule "homedir/.vim/bundle/Vundle.vim"]
 path = homedir/.vim/bundle/Vundle.vim
 url = git://github.com/VundleVim/Vundle.vim.git
+```
