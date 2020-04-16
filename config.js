@@ -27,6 +27,8 @@ module.exports = {
     'kube-ps1'
     'yarn',
     'k9s'
+    //https://github.com/npryce/adr-tools/blob/master/INSTALL.md
+    'adr-tools'
   ],
   cask: [
     'docker', // docker for mac
