@@ -42,5 +42,6 @@ module.exports = {
     'prettyjson',
     'buzzphrase',
     'vtop',
+    'tldr',  //https://tldr.sh/
   ]
 };
