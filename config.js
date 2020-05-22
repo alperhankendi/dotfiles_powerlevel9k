@@ -28,7 +28,9 @@ module.exports = {
     'yarn',
     'k9s'
     //https://github.com/npryce/adr-tools/blob/master/INSTALL.md
-    'adr-tools'
+    'adr-tools',
+    'kind',
+    'skaffold' //https://skaffold.dev/docs/
   ],
   cask: [
     'docker', // docker for mac
