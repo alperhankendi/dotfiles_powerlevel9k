@@ -102,7 +102,9 @@ alias kgsvc='kubectl get service'
 
 #lazy docker
 alias lzd='lazydocker'
-
+#docker-compose
+alias ddown='docker-compose down'
+alias dup='docker-compose up -d --build --force-recreate'
 #network stuff
 netstat -ant | grep :8000 | awk '{print $6}' | sort | uniq -c | sort -n
 
